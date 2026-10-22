@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusFlow | Student Focus Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">✦</span> FocusFlow
+    </a>
+    <span class="top-label">YOUR PERSONAL STUDY SPACE</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR SPACE TO GROW</p>
+        <h1>Make today count<span>.</span></h1>
+        <p class="subtitle">Small steps every day lead to big results.</p>
+      </div>
+      <div class="date-card">
+        <span>📅</span>
+        <div>
+          <strong id="todayDate">Today</strong>
+          <small>One day at a time</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-icon lavender">☑</span>
+        <p>Total tasks</p>
+        <h2 id="totalTasks">0</h2>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon green">✓</span>
+        <p>Completed</p>
+        <h2 id="completedTasks">0</h2>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon orange">◷</span>
+        <p>Study goal</p>
+        <h2><span id="goalDisplay">2</span> hrs</h2>
+        <button id="editGoal" class="text-button">Change goal</button>
+      </article>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-heading">
+        <div>
+          <h3>Today's progress</h3>
+          <p>Every task you finish is a win.</p>
+        </div>
+        <strong id="progressPercent">0%</strong>
+      </div>
+      <div class="progress-track">
+        <div id="progressBar" class="progress-fill"></div>
+      </div>
+      <p id="progressMessage" class="progress-message">
+        Let's get started. You've got this!
+      </p>
+    </section>
+
+    <div class="workspace">
+      <section class="panel task-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">STAY ORGANIZED</p>
+            <h2>My tasks</h2>
+          </div>
+          <span class="count-badge" id="taskCount">0 tasks</span>
+        </div>
+
+        <form id="taskForm" class="task-form">
+          <label for="taskInput">What do you want to accomplish?</label>
+          <input
+            id="taskInput"
+            type="text"
+            maxlength="120"
+            placeholder="e.g. Practice 2 Java problems"
+            required
+          >
+
+          <div class="form-row">
+            <div class="field">
+              <label for="priorityInput">Priority</label>
+              <select id="priorityInput">
+                <option value="High">High</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <button type="submit" class="primary-button">
+              + Add task
+            </button>
+          </div>
+        </form>
+
+        <div class="filter-row" aria-label="Filter tasks">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="pending">Pending</button>
+          <button class="filter-button" data-filter="completed">Completed</button>
+        </div>
+
+        <div id="taskList" class="task-list"></div>
+        <p id="emptyMessage" class="empty-message">
+          Your list is clear. Add your first task above!
+        </p>
+      </section>
+
+      <aside class="panel focus-panel">
+        <p class="eyebrow">DEEP WORK MODE</p>
+        <h2>Focus timer</h2>
+        <p class="panel-description">One thing at a time. Give it your best.</p>
+
+        <div class="timer-ring">
+          <div class="timer-inner">
+            <span id="timerMode" class="timer-mode">FOCUS SESSION</span>
+            <strong id="timerDisplay">25:00</strong>
+            <span id="timerStatus" class="timer-status">Ready when you are</span>
+          </div>
+        </div>
+
+        <div class="timer-actions">
+          <button id="startTimer" class="primary-button">▶ Start</button>
+          <button id="resetTimer" class="secondary-button">↻ Reset</button>
+        </div>
+
+        <div class="session-options">
+          <button id="focusMode" class="session-button active">25 min focus</button>
+          <button id="breakMode" class="session-button">5 min break</button>
+        </div>
+
+        <div class="focus-tip">
+          <span>💡</span>
+          <p><strong>Focus tip</strong><br>Put your phone away and work on just one task.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Made with <span>♥</span> for students who want to grow.</p>
+      <small>Your tasks are saved in this browser.</small>
+    </footer>
+  </main>
+</body>
+</html>
